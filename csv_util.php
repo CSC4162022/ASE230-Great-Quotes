@@ -67,8 +67,8 @@ class Utilities {
             if ($i == $authorIndex) {
                 for ($j=0;$j<count($data);$j++) {
                     if ($j == $recordIndex) {
-                        $elem[] = $record;
-                        $data[$j] = $elem;
+                        //$elem[] = $record;
+                        $data[$j] = $record;
                         fputcsv($output, $data);
                     }
                 }
@@ -139,6 +139,7 @@ class Utilities {
     //check if the file containing banned users exists, check if the email has been banned
     //check if the file containing users exists, check if the email is registered
     function verifyUser($usersFile, $bannedUsersFile, $email) {
+        $utilities = new Utilities();
         $emailMatch = false;
         if(file_exists($usersFile) && file_exists($bannedUsersFile)) {
 
@@ -148,7 +149,7 @@ class Utilities {
                     $emailMatch = true;
                 }
             }
-            if (userIsBanned($email) == true) {
+            if ($utilities->userIsBanned($email) == true) {
                 die('You are banned');
             }
             if ($emailMatch == true) {
