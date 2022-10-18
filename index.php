@@ -1,5 +1,6 @@
 <?php
-require "csv_util.php";
+
+require "./csv_util.php";
 
 $utilities = new Utilities();
 
@@ -9,7 +10,7 @@ function printAuthorsQuotes($authors, $quotes) {
         for($i=0; $i<count($authors); $i++){
             if ($authors[$i][0] && $authors[$i][1]) {
                 ?>
-                <p><strong><?= $authors[$i][0] ?> <?= $authors[$i][1] ?></strong></p>
+                <p><strong><?= $authors[$i][0] ?> <?= $authors[$i][1] ?></strong><a href="authors/detail.php?index=<?=$i?>"><?= ' Detail' ?></a></p>
                 <?php
             }
             for($j=0; $j<count($quotes[$i]); $j++) {
@@ -43,9 +44,11 @@ function printAuthorsQuotes($authors, $quotes) {
         <div class="form-outline mb-4">
             <?php
             printAuthorsQuotes($utilities->getArrayFromCsv('./authors.csv'),$utilities->getArrayFromCsv('./quotes.csv'));
-            ?>
-            <p><a href="quotes/create.php?"><?= 'Create Quote' ?></a></p>
-            <?php
+                ?>
+                <p><a href="quotes/create.php?"><?= 'Create Quote' ?></a></p>
+                <p><a href="authors/create.php?"><?= 'Create Author' ?></a></p>
+                <?php
+
             ?>
         </div>
     </div>
@@ -55,5 +58,3 @@ function printAuthorsQuotes($authors, $quotes) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
-
-
