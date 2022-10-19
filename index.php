@@ -16,7 +16,7 @@ function printAuthorsQuotes($authors, $quotes) {
             for($j=0; $j<count($quotes[$i]); $j++) {
                 if ($quotes[$i][$j]) {
                     ?>
-                    <p><?= $quotes[$i][$j] ?><a href="quotes/detail.php?index=<?=$i?>&quote=<?=$j?>"><?= 'Quote Detail' ?></a></p>
+                    <p><?= $quotes[$i][$j] ?><a href="quotes/detail.php?index=<?=$i?>&quote=<?=$j?>"><?= ' Quote Detail' ?></a></p>
                     <?php
                 }
             }
