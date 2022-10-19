@@ -43,9 +43,9 @@ else {
 function requestDeleteConfirmation($quote, $quoteIndex, $authorIndex, $author)
 {
 
-?>
-<!doctype html>
-<html lang="en">
+    ?>
+    <!doctype html>
+    <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -54,24 +54,24 @@ function requestDeleteConfirmation($quote, $quoteIndex, $authorIndex, $author)
         <title><?= "Delete Quote"; ?></title>
     </head>
     <body>
-        <!-- Prompt to delete the quote -->
-        <div class="container text-center">
-            <form method="post" action="/quotes/delete.php">
-                <p><?= 'Do you want to delete this quote by ' . ' -' . $author[0]  . ' ' . $author[1] . ' ?' ?></p>
-                <h5><?= $quote ?></h5>
-                <div class="form-outline mb-4">
-                    <input type="radio" value="<?='Yes'?>" name="<?='delete_confirm'?>"/><?='Yes'?><br>
-                    <input type="radio" value="<?='No'?>" name="<?='delete_confirm'?>"/><?='No'?><br>
-                </div>
-                <div class="form-outline mb-4">
-                    <input type="hidden" value="<?= $quote ?>" name="<?= 'quote' ?>" />
-                    <input type="hidden" value="<?= $quoteIndex ?>" name="<?= 'quoteIndex' ?>" />
-                    <input type="hidden" value="<?= $authorIndex ?>" name="<?= 'authorIndex' ?>" />
-                    <input type = "submit" value = "<?='submit'?>" name = "<?= 'submitDeleteQuote' ?>" />
-                </div>
-            </form>
-        </div>
+    <!-- Prompt to delete the quote -->
+    <div class="container text-center">
+        <form method="post" action="/quotes/delete.php">
+            <p><?= 'Do you want to delete this quote by ' . ' -' . $author[0]  . ' ' . $author[1] . ' ?' ?></p>
+            <h5><?= $quote ?></h5>
+            <div class="form-outline mb-4">
+                <input type="radio" value="<?='Yes'?>" name="<?='delete_confirm'?>"/><?='Yes'?><br>
+                <input type="radio" value="<?='No'?>" name="<?='delete_confirm'?>"/><?='No'?><br>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="hidden" value="<?= $quote ?>" name="<?= 'quote' ?>" />
+                <input type="hidden" value="<?= $quoteIndex ?>" name="<?= 'quoteIndex' ?>" />
+                <input type="hidden" value="<?= $authorIndex ?>" name="<?= 'authorIndex' ?>" />
+                <input type = "submit" value = "<?='submit'?>" name = "<?= 'submitDeleteQuote' ?>" />
+            </div>
+        </form>
+    </div>
     </body>
-</html>
-<?php
+    </html>
+    <?php
 }
